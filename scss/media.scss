@@ -1,0 +1,37 @@
+@media (max-width: 1079.98px) {
+  /*HEADER*/
+  .header-container {
+    padding: 10px;
+  }
+  .header-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: visible;
+    overflow-x: hidden;
+    background-color: var(--dark-gray-opacity-9);
+    transform: translateY(-300%);
+    transition: transform 0.3s ease-in-out;
+  }
+  .header-nav.open-menu {
+    transform: translateY(0);
+  }
+  .header-nav-menu {
+    flex-flow: column nowrap;
+    gap: 20px;
+  }
+  .header-nav-menu-item-link:hover {
+    background-color: transparent;
+  }
+  .header-nav-menu-item-link span {
+    font-size: 36px;
+  }
+  .header-burger {
+    display: flex;
+  }
+}

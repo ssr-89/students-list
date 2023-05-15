@@ -1,0 +1,269 @@
+/*students*/
+.students__container {
+  margin: 0 auto;
+  padding: 50px;
+  max-width: 1600px;
+}
+.students__title {
+  margin-bottom: 50px;
+  font-size: 48px;
+}
+
+/*filter-students*/
+.wrapper-students-filter {
+  margin-bottom: 40px;
+  padding: 5px 20px;
+  background-color: var(--light-gray);
+  border-radius: 3px;
+}
+.wrapper-students-filter__title {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+.students-filter-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.students-filter-form__input {
+  flex: 1 1 auto;
+  padding: 5px;
+  border-bottom: 1px solid var(--black);
+}
+.students-filter-form__input::placeholder {
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+.students-filter-form__input:focus::placeholder {
+  opacity: 0;
+  visibility: hidden;
+}
+.students-filter-form__input--fullname {
+  flex: 2 1 auto;
+}
+.students-filter-form__submit path {
+  fill: var(--dark-gray);
+  transition: fill 0.3s ease-in-out;
+}
+.students-filter-form__submit:hover path {
+  fill: var(--dark-gray-opacity-6);
+}
+
+/*form-add-student*/
+.students__new-student-btn {
+  margin-bottom: 40px;
+  padding: 10px 20px;
+  background-color: var(--dark-gray);
+  border-radius: 3px;
+  font-size: 20px;
+  color: var(--white);
+  transition: box-shadow 0.3s ease-in-out;
+}
+.students__new-student-btn:hover {
+  box-shadow: 0 0 5px var(--dark-gray), 0 0 5px var(--dark-gray), 0 0 5px var(--dark-gray), 0 0 5px var(--dark-gray);
+}
+.wrapper-new-student {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: visible;
+  overflow-x: hidden;
+  background-color: var(--black-opacity-8);
+  transform: translateY(-300%);
+  transition: transform 0.3s ease-in-out;
+}
+.wrapper-new-student.show {
+  transform: translateY(0);
+}
+.new-student-form {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0 auto;
+  padding: 60px 30px 40px;
+  background-color: var(--white);
+  border-radius: 5px;
+}
+.new-student-form__title {
+  margin-bottom: 50px;
+  font-size: 48px;
+  color: var(--black);
+}
+.new-student-form__wrapper {
+  margin-bottom: 30px;
+}
+.new-student-form__fullname {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+.new-student-form__text-validate {
+  flex: 1 1 100%;
+  color: var(--gray);
+}
+.new-student-form-wrapper-input {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.new-student-form__fullname .new-student-form-wrapper-input {
+  position: relative;
+  flex: 1 1 200px;
+  margin: 0;
+}
+.new-student-form-input {
+  padding: 15px 10px 10px;
+  background-color: var(--light-white);
+  border-radius: 5px;
+  border: 1px solid var(--light-white);
+  outline: none;
+  font-size: 20px;
+  color: var(--black);
+  transition: all 0.3s ease-in-out;
+}
+.new-student-form-input[type="date"] {
+  cursor: pointer;
+}
+.new-student-form-input:hover:not(:focus) {
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px 5px var(--black-opacity-2) inset;
+  border-color: var(--gray);
+}
+
+.new-student-form__date-inputs {
+  display: flex;
+  gap: 10px;
+  padding: 10px 0 20px;
+  width: 60%;
+}
+.new-student-form__date-inputs .new-student-form-wrapper-input {
+  flex: 1 1 60%;
+  margin: 0;
+}
+.new-student-form__date-inputs input {
+  width: 100%;
+}
+
+.new-student-form-wrapper-input label {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  padding: 10px 0;
+  font-size: 20px;
+  pointer-events: none;
+  color: var(--black);
+  transition: all 0.3s ease-in-out;
+}
+.new-student-form-input:focus ~ label,
+.new-student-form-input:valid ~ label {
+  top: -25px;
+  color: var(--gray);
+  font-size: 14px;
+}
+.new-student-form__wrapper-birthday label,
+.new-student-form__wrapper-start-training label {
+  position: static;
+  color: var(--black);
+  font-size: 20px;
+}
+.new-student-form__wrapper-faculty {
+  width: 60%;
+}
+.new-student-form__wrapper-faculty .new-student-form-wrapper-input {
+  position: relative;
+}
+.new-student-form__submit {
+  padding: 20px;
+  color: var(--black);
+  border: 1px solid var(--black);
+  border-radius: 5px;
+  font-size: 36px;
+  transition: all 0.3s ease-in-out;
+}
+.new-student-form__submit:hover {
+  background-color: var(--black);
+  color: var(--white);
+  box-shadow: 0 0 5px var(--black), 0 0 5px var(--black), 0 0 5px var(--black), 0 0 5px var(--black);
+}
+.new-student-form__submit:disabled:hover {
+  background-color: transparent;
+  color: var(--black);
+  box-shadow: none;
+}
+.new-student-form__close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 36px;
+  color: var(--black);
+}
+.new-student-form__close span {
+  transition: all 0.3s ease-in-out;
+}
+.new-student-form__close:hover span {
+  color: var(--gray);
+}
+
+/*students-list*/
+.students-captions {
+  position: relative;
+  display: flex;
+  width: 100%;
+  font-size: 0;
+}
+.students-captions-title {
+  position: relative;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid var(--black);
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+.students-captions-title svg {
+  position: absolute;
+  top: 45%;
+  right: 20px;
+}
+.students-captions-title.up svg {
+  transform: rotate(180deg);
+}
+.students-captions-title:hover {
+  background-color: var(--light-gray);
+}
+#students-list {
+  width: 100%;
+  font-size: 0;
+}
+.students-list-item {
+  border: 1px solid var(--black);
+  float: left;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+.students-fullname {
+  width: 30%;
+}
+.students-faculty {
+  width: 25%;
+}
+.students-birthday {
+  width: 25%;
+}
+.students-period {
+  width: 20%;
+}
+
+/*validation*/
+.js-validate-error-label {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+}

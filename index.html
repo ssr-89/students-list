@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>База студентов</title>
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/media.css" rel="stylesheet">
+  <script src="libs/inputmask/inputmask.min.js" defer></script>
+  <script src="libs/validate-form/just-validate.min.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <div id="wrapper" class="wrapper">
+    <header id="header" class="header lock-padding">
+      <div class="header-container">
+        <a class="header-logo link" href="#">
+          <span>SSR</span>
+        </a>
+        <nav class="header-nav">
+          <ul class="header-nav-menu list">
+            <li class="header-nav-menu-item">
+              <a class="header-nav-menu-item-link link" href="#">
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="header-nav-menu-item">
+              <a class="header-nav-menu-item-link link" href="#">
+                <span>About&nbsp;us</span>
+              </a>
+            </li>
+            <li class="header-nav-menu-item">
+              <a class="header-nav-menu-item-link link" href="#">
+                <span>Services</span>
+              </a>
+            </li>
+            <li class="header-nav-menu-item">
+              <a class="header-nav-menu-item-link link" href="#footer">
+                <span>Contacts</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <button class="header-burger btn" aria-label="burger-menu">
+          <span></span>
+        </button>
+      </div>
+    </header>
+    <main id="main" class="main">
+      <section id="students" class="students">
+        <div class="students__container">
+          <h2 class="students__title title">Панель управления</h2>
+          <div class="students__wrapper-students-filter wrapper-students-filter">
+            <h3 class="wrapper-students-filter__title title">
+              Поиск по базе
+            </h3>
+            <form id="filter-form" class="wrapper-students-filter__form students-filter-form">
+              <input id="filter-fullname" class="students-filter-form__input students-filter-form__input--fullname input" name="filter-fullname" type="text" placeholder="ФИО студента">
+              <input id="filter-faculty" class="students-filter-form__input students-filter-form__input--faculty input" name="filter-faculty" type="text" placeholder="Факультет">
+              <input id="filter-startstudy" class="students-filter-form__input students-filter-form__input--start-study input" name="filter-startstudy" type="number" placeholder="Начало обучения">
+              <input id="filter-endstudy" class="students-filter-form__input students-filter-form__input--end-study input" name="filter-endstudy" type="number" placeholder="Конец обучения">
+              <button class="students-filter-form__submit btn" type="submit">
+                <svg viewBox="0 0 512 512" width="30" title="search">
+                  <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+                </svg>
+              </button>
+            </form>
+          </div>
+          <button class="students__new-student-btn btn">
+            <span>Добавить студента</span>
+          </button>
+          <div class="students__wrapper-new-student wrapper-new-student">
+            <form id="new-student" class="wrapper-new-student__form new-student-form" name="form-new-student">
+              <h3 class="new-student-form__title title">Новый студент</h3>
+              <div class="new-student-form__fullname new-student-form__wrapper">
+                <div class="new-student-form__wrapper-name new-student-form-wrapper-input">
+                  <input id="name" class="new-student-form__input new-student-form-input new-student-form-input--firstname input" name="name" type="text" data-validate-field="name" required>
+                  <label for="name">Имя</label>
+                </div>
+                <div class="new-student-form__wrapper-lastname new-student-form-wrapper-input">
+                  <input id="lastname" class="new-student-form__input new-student-form-input new-student-form-input--lastname input" name="lastname" type="text" data-validate-field="lastname" required>
+                  <label for="lastname">Фамилия</label>
+                </div>
+                <div class="new-student-form__wrapper-middle-name new-student-form-wrapper-input">
+                  <input id="middle-name" class="new-student-form__input new-student-form-input new-student-form-input--middlename input" name="middle-name" type="text" data-validate-field="middlename" required>
+                  <label for="middle-name">Отчество</label>
+                </div>
+                <!-- <span class="new-student-form__text-validate">Только русские буквы. Пример: Иванов Иван Иванович</span> -->
+              </div>
+              <div class="new-student-form__date-inputs new-student-form__wrapper">
+                <div class="new-student-form__wrapper-birthday new-student-form-wrapper-input">
+                  <label for="birthday">Дата рождения</label>
+                  <input id="birthday" class="new-student-form__input new-student-form-input new-student-form-input--birthday input" name="birthday" type="date" min="1900-01-01" required>
+                </div>
+                <div class="new-student-form__wrapper-start-training new-student-form-wrapper-input">
+                  <label for="start-training">Дата начала обучения</label>
+                  <input id="start-training" class="new-student-form__input new-student-form-input new-student-form-input--start input" name="start-training" type="date" min="2000-09-01" required>
+                </div>
+              </div>
+              <div class="new-student-form__wrapper-faculty new-student-form__wrapper">
+                <div class="new-student-form-wrapper-input">
+                  <input id="faculty" class="new-student-form__input new-student-form-input new-student-form-input--faculty input" name="faculty" type="text" data-validate-field="faculty" required>
+                  <label for="faculty">Факультет</label>
+                  <!-- <span class="new-student-form__text-validate">Только русские буквы. Пример: Астрономия</span> -->
+                </div>
+              </div>
+              <button id="add-student" class="new-student-form__submit btn" type="submit">
+                Добавить
+              </button>
+              <button class="new-student-form__close btn" type="button" aria-label="Закрыть форму">
+                <span>&#10006;</span>
+              </button>
+            </form>
+          </div>
+          <div id="wrapper-studetns-list" class="students__wrapper-studetns-list wrapper-studetns-list">
+            <div class="students-captions">
+              <a id="students-captions-fullname" class="students-captions__item students-captions-title students-fullname link" data-property="fullname">
+                <span>ФИО&nbsp;студента</span>
+                <svg width="20" height="10" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 1L6 6.00001L0.999997 1" stroke="black"></path>
+                </svg>
+              </a>
+              <a id="students-captions-faculty" class="students-captions__item students-captions-title students-faculty link" data-property="faculty">
+                <span>Факультет</span>
+                <svg width="20" height="10" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 1L6 6.00001L0.999997 1" stroke="black"></path>
+                </svg>
+              </a>
+              <a id="students-captions-birthday" class="students-captions__item students-captions-title students-birthday link" data-property="birthday">
+                <span>Дата&nbsp;рождения и возраст</span>
+                <svg width="20" height="10" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 1L6 6.00001L0.999997 1" stroke="black"></path>
+                </svg>
+              </a>
+              <a id="students-captions-period" class="students-captions__item students-captions-title students-period link" data-property="startstudy">
+                <span>Период&nbsp;обучения</span>
+                <svg width="20" height="10" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 1L6 6.00001L0.999997 1" stroke="black"></path>
+                </svg>
+              </a>
+            </div>
+            <ul id="students-list" class="students-list list"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class="footer">
+      <div class="footer-container">
+        FOOTER
+      </div>
+    </footer>
+  </div>
+  <!-- <table id="students-table" class="wrapper-students-table__table studetns-table table" border="1" cellspacing="0" cellpadding="10">
+              <thead class="studetns-table__thead studetns-table-thead">
+                <tr class="studetns-table-thead__tr">
+                  <th class="studetns-table-thead__th">
+                    <a class="studetns-table-thead__link studetns-table-thead__link--fullname link">
+                      <span>ФИО студента</span>
+                    </a>
+                  </th>
+                  <th class="studetns-table-thead__th">
+                    <a class="studetns-table-thead__link studetns-table-thead__link--faculty link">
+                      <span>Факультет</span>
+                    </a>
+                  </th>
+                  <th class="studetns-table-thead__th">
+                    <a class="studetns-table-thead__link studetns-table-thead__link--birthday link">
+                      <span>Дата рождения</span>
+                    </a>
+                  </th>
+                  <th class="studetns-table-thead__th">
+                    <a class="studetns-table-thead__link studetns-table-thead__link--age link">
+                      <span>Возраст</span>
+                    </a>
+                  </th>
+                  <th class="studetns-table-thead__th">
+                    <a class="studetns-table-thead__link studetns-table-thead__link--period link">
+                      <span>Период обучения</span>
+                    </a>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="students-table-tbody"></tbody>
+            </table><br><br><br><br> -->
+</body>
+
+</html>
